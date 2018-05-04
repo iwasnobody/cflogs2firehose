@@ -9,11 +9,8 @@ curl -XPUT https://search-testa-lznr7n63hxwoc3zdpf6si42yja.us-east-1.es.amazonaw
         "text" : {
           "properties" : {
             "c_ip" : {
-              "type" : "text",
+              "type" : "keyword",
               "fields" : {
-                "keyword" : {
-                  "type" : "keyword"
-                },
                 "ip" : {
                   "type" : "ip"
                 }
@@ -29,12 +26,7 @@ curl -XPUT https://search-testa-lznr7n63hxwoc3zdpf6si42yja.us-east-1.es.amazonaw
               "type" : "keyword"
             },
             "cs_protocol" : {
-              "type" : "text",
-              "fields" : {
-                "keyword" : {
-                  "type" : "keyword"
-                }
-              }
+              "type" : "keyword"
             },
             "cs_protocol_version" : {
               "type" : "keyword"
@@ -46,12 +38,7 @@ curl -XPUT https://search-testa-lznr7n63hxwoc3zdpf6si42yja.us-east-1.es.amazonaw
               "type" : "keyword"
             },
             "date" : {
-              "type" : "text",
-              "fields" : {
-                "keyword" : {
-                  "type" : "keyword"
-                }
-              }
+              "type" : "keyword"
             },
             "fle_encrypted_fields" : {
               "type" : "keyword"
@@ -69,12 +56,7 @@ curl -XPUT https://search-testa-lznr7n63hxwoc3zdpf6si42yja.us-east-1.es.amazonaw
               "type" : "integer"
             },
             "sc_status" : {
-              "type" : "text",
-              "fields" : {
-                "keyword" : {
-                  "type" : "keyword"
-                }
-              }
+              "type" : "keyword"
             },
             "ssl_cipher" : {
               "type" : "keyword"
@@ -83,12 +65,7 @@ curl -XPUT https://search-testa-lznr7n63hxwoc3zdpf6si42yja.us-east-1.es.amazonaw
               "type" : "keyword"
             },
             "time" : {
-              "type" : "text",
-              "fields" : {
-                "keyword" : {
-                  "type" : "keyword"
-                }
-              }
+              "type" : "keyword"
             },
             "timestamp" : {
                 "type" : "date",
@@ -98,12 +75,7 @@ curl -XPUT https://search-testa-lznr7n63hxwoc3zdpf6si42yja.us-east-1.es.amazonaw
               "type" : "half_float"
             },
             "user_agent" : {
-              "type" : "text",
-              "fields" : {
-                "keyword" : {
-                  "type" : "keyword"
-                }
-              }
+              "type" : "keyword"
             },
             "x_edge_location" : {
               "type" : "keyword"
