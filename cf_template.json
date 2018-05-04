@@ -1,0 +1,129 @@
+curl -XPUT https://search-testa-lznr7n63hxwoc3zdpf6si42yja.us-east-1.es.amazonaws.com/_template/cflogs -d '
+{
+    "index_patterns": "cflogs-*",
+    "settings": {
+      "number_of_shards": 6,
+      "number_of_replicas": 2
+    },  
+    "mappings" : {
+        "text" : {
+          "properties" : {
+            "c_ip" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword"
+                },
+                "ip" : {
+                  "type" : "ip"
+                }
+              }
+            },
+            "cookie" : {
+              "type" : "keyword"
+            },
+            "cs_bytes" : {
+              "type" : "integer"
+            },
+            "cs_method" : {
+              "type" : "keyword"
+            },
+            "cs_protocol" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword"
+                }
+              }
+            },
+            "cs_protocol_version" : {
+              "type" : "keyword"
+            },
+            "cs_uri_query" : {
+              "type" : "keyword"
+            },
+            "cs_uri_stem" : {
+              "type" : "keyword"
+            },
+            "date" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword"
+                }
+              }
+            },
+            "fle_encrypted_fields" : {
+              "type" : "keyword"
+            },
+            "fle_status" : {
+              "type" : "keyword"
+            },
+            "host" : {
+              "type" : "keyword"
+            },
+            "referer" : {
+              "type" : "keyword"
+            },
+            "sc_bytes" : {
+              "type" : "integer"
+            },
+            "sc_status" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword"
+                }
+              }
+            },
+            "ssl_cipher" : {
+              "type" : "keyword"
+            },
+            "ssl_protocol" : {
+              "type" : "keyword"
+            },
+            "time" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword"
+                }
+              }
+            },
+            "timestamp" : {
+                "type" : "date",
+                "format": "yyyy-MM-dd HH:mm:ss"
+              },
+            "time_taken" : {
+              "type" : "half_float"
+            },
+            "user_agent" : {
+              "type" : "text",
+              "fields" : {
+                "keyword" : {
+                  "type" : "keyword"
+                }
+              }
+            },
+            "x_edge_location" : {
+              "type" : "keyword"
+            },
+            "x_edge_request_id" : {
+              "type" : "keyword"
+            },
+            "x_edge_response_result_type" : {
+              "type" : "keyword"
+            },
+            "x_edge_result_type" : {
+              "type" : "keyword"
+            },
+            "x_forwarded_for" : {
+              "type" : "keyword"
+            },
+            "x_host_header" : {
+              "type" : "keyword"
+            }
+          }
+        }
+    }
+}' -H "Content-Type: application/json"
