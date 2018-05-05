@@ -32,15 +32,12 @@ def lambda_handler(event, context):
                     'cs_protocol_version':linelist[23],'fle_status':linelist[24],\
                     'fle_encrypted_fields':linelist[25],'timestamp':linelist[0]+' '+linelist[1]}
                 jsondata=json.dumps(data)
-                #separator = '|'
-                #data = separator.join(linelist)
-                #data = data+'\n'
-                #jsondata2 = jsondata+'\n'
-                print jsondata
-                response = firehose.put_record(
-                    DeliveryStreamName='cflogs2es',
-                    Record={
-                        'Data': jsondata
-                        }
-                )
-                print response
+                try:
+                    response = firehose.put_record(
+                        DeliveryStreamName='cflogs2es',
+                        Record={
+                            'Data': jsondata
+                            }
+                    )
+                except Exception as e:
+                    print e
